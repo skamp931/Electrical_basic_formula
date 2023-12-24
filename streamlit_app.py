@@ -11,14 +11,15 @@ with st.sidebar:
     )
 
 if add_radio =="電気工学_基本":
-    st.write("*電気工学_基本*")
+    st.write("**電気工学_基本**")
+    st.write("_オームの法則_")
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
  
     with col1:
         st.write('電圧V（ボルト）を求める')
-        orm_1 = st.number_input("抵抗R")
-        ampea_1 = st.number_input("電流I")
+        orm_1 = st.number_input("抵抗R",10)
+        ampea_1 = st.number_input("電流I",5)
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
         st.write(f"　電圧Vは{volt_1:,.3f}Vです")
