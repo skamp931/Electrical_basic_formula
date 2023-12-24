@@ -30,21 +30,21 @@ if add_radio =="電気工学_基本":
         ampea_1 = st.number_input("電流I")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
-        st.write(f"電圧は{volt_1:3f}Vです")
+        st.write(f"　電圧Vは{volt_1:,.3f}Vです")
         
     with col2:
         st.write('電流I（アンペア）を求める')
         orm_2 = st.number_input("抵抗R_")
         volt_2 = st.number_input("電圧V_")
         ampea_2 = volt_2 * orm_2 
-        st.write(f"電圧は{ampea_2:3f}Vです")
+        st.write(f"　電流Iは{ampea_2:,.3f}Vです")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
         volt_3 = st.number_input("電圧V__")
         ampea_3 = st.number_input("電流I__")
         orm_3 = volt_3 * ampea_3 
-        st.write(f"電圧は{orm_3:3f}Vです")
+        st.write(f"　抵抗Rは{orm_3:,.3f}Vです")
 
 
 if add_radio =="*電気工学_電磁気*":
