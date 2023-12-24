@@ -50,15 +50,15 @@ if add_radio =="電気工学_基本":
     st.write(f"　抵抗Rは{1/orm_pala_value:,.3f}Ωです")
 
 
-if add_radio =="*電気工学_電磁気*":
+if add_radio =="電気工学_電磁気":
     st.write("作成中")
     st.write("")
 
-if add_radio =="*架線*":
+if add_radio =="架線":
     st.write("作成中")
     st.write("")
 
-if add_radio =="*地質*":
+if add_radio =="地質":
     st.write("作成中")
     st.write("")
 
