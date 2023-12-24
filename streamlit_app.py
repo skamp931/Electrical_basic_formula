@@ -11,30 +11,30 @@ with st.sidebar:
     )
 
 if add_radio =="電気工学_基本":
-    st.header('電気工学_基本')
+    st.header('【電気工学_基本】')
     st.subheader('オームの法則', divider='blue')
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
  
     with col1:
         st.write('電圧V（ボルト）を求める')
-        orm_1 = st.number_input("抵抗R",10)
-        ampea_1 = st.number_input("電流I",5)
+        orm_1 = st.number_input("抵抗R",10.0)
+        ampea_1 = st.number_input("電流I",5.0)
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
         st.write(f"　電圧Vは{volt_1:,.3f}Vです")
         
     with col2:
         st.write('電流I（アンペア）を求める')
-        orm_1 = st.number_input("抵抗R_",10)
-        volt_1 = st.number_input("電圧V_",50)
+        orm_1 = st.number_input("抵抗R_",10.0)
+        volt_1 = st.number_input("電圧V_",50.0)
         ampea_1 = volt_1 / orm_1 
         st.write(f"　電流Iは{ampea_1:,.3f}Aです")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
-        volt_1 = st.number_input("電圧V__",50)
-        ampea_1 = st.number_input("電流I__",5)
+        volt_1 = st.number_input("電圧V__",50.0)
+        ampea_1 = st.number_input("電流I__",5.0)
         orm_1 = volt_1 / ampea_1 
         st.write(f"　抵抗Rは{orm_1:,.3f}Ωです")
 
@@ -52,15 +52,15 @@ if add_radio =="電気工学_基本":
 
 
 if add_radio =="電気工学_電磁気":
-    st.header('電気工学_電磁気')   
+    st.header('【電気工学_電磁気】')   
     st.write("作成中")
 
 if add_radio =="架線":
-    st.header('架線')   
+    st.header('【架線】')   
     st.write("作成中")
 
 if add_radio =="地質":
-    st.header('地質')   
+    st.header('【地質】')   
     st.write("作成中")
 
 for i in range(20):
