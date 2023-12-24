@@ -41,7 +41,7 @@ if add_radio =="電気工学_基本":
     st.write("_抵抗の並列接続_")
     #st.image("./image/orm.jpg")
     pala = st.number_input("並列数",2)
-    orm_para_num = []
+    orm_para = []
     if pala > 1:
         for i in range(pala):
             orm_pala.append()
