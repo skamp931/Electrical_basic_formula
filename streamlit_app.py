@@ -51,16 +51,19 @@ if add_radio =="電気工学_基本":
 
 
 if add_radio =="*電気工学_電磁気*":
-    st.write("小学生の時にかかる費用")
-    st.write("小学")
+    st.write("作成中")
+    st.write("")
 
 if add_radio =="*架線*":
-    st.write("高校生の時にかかる費用")
-    st.write("高校")
+    st.write("作成中")
+    st.write("")
 
 if add_radio =="*地質*":
-    st.write("高校生の時にかかる費用")
-    st.write("高校")
+    st.write("作成中")
+    st.write("")
+
+for i in range(20):
+    st.write("")
 
 st.write("参考にさせて頂きました。 https://hegtel.com/koshiki-denki.html")
     
