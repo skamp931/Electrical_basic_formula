@@ -26,12 +26,23 @@ if add_radio =="電気工学_基本":
  
     with col1:
         st.write('電圧V（ボルト）を求める')
-     
+        orm = st.number_input("抵抗R")
+        ampea = st.number_input("電流I")
+        volt = st.empty() 
+        volt.write(orm * ampea)
     with col2:
         st.write('電流I（アンペア）を求める')
+        orm = st.number_input("抵抗R")
+        volt = st.number_input("電圧V")
+        ampea = st.empty() 
+        ampea.write(volt * orm)
 
     with col2:
         st.write('抵抗R（オーム）を求める')
+        volt = st.number_input("電圧V")
+        ampea = st.number_input("電流I")
+        orm = st.empty() 
+        orm.write(volt * ampea)
 
 
 if add_radio =="*電気工学_電磁気*":
