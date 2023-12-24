@@ -20,20 +20,30 @@ with st.sidebar:
     )
 
 if add_radio =="電気工学_基本":
-    st.write("**電気工学_基本**")
-    st.write("園児")
+    st.write("*電気工学_基本*")
+    col1, col2,col3 = st.columns(3)
+ 
+    with col1:
+        st.write('電圧V（ボルト）を求める')
+     
+    with col2:
+        st.write('電流I（アンペア）を求める')
 
-if add_radio =="電気工学_電磁気":
+    with col2:
+        st.write('抵抗R（オーム）を求める')
+
+
+if add_radio =="*電気工学_電磁気*":
     st.write("小学生の時にかかる費用")
     st.write("小学")
 
-if add_radio =="架線":
+if add_radio =="*架線*":
     st.write("高校生の時にかかる費用")
     st.write("高校")
 
-if add_radio =="地質":
+if add_radio =="*地質*":
     st.write("高校生の時にかかる費用")
     st.write("高校")
 
-st.write("https://hegtel.com/koshiki-denki.html")
+st.write("参考にさせて頂きました。 https://hegtel.com/koshiki-denki.html")
     
