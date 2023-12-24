@@ -2,7 +2,7 @@ import streamlit as st
 import math
 import time
 
-st.title("**電気工学等の基本公式計算**")
+st.title("**電気工学等の基本公式計算**",divider='rainbow')
 
 with st.sidebar:
     add_radio = st.radio(
@@ -11,8 +11,8 @@ with st.sidebar:
     )
 
 if add_radio =="電気工学_基本":
-    st.write("**電気工学_基本**")
-    st.write("_オームの法則_")
+    st.subheader('電気工学_基本')
+    st.subheader('オームの法則', divider='blue')
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
  
@@ -38,7 +38,8 @@ if add_radio =="電気工学_基本":
         orm_1 = volt_1 / ampea_1 
         st.write(f"　抵抗Rは{orm_1:,.3f}Ωです")
 
-    st.write("_抵抗の並列接続_")
+    st.write("")
+    st.subheader('抵抗の並列接続', divider='blue')
     #st.image("./image/orm.jpg")
     pala = st.number_input("並列数",2)
     orm_pala = []
