@@ -4,15 +4,6 @@ import time
 
 st.title("**電気工学等の基本公式計算**")
 
-# Using object notation
-"""
-with st.sidebar:
-    add_selectbox = st.selectbox(
-    "種類",
-    ("電気工学_基本", "電気工学_電磁気", "架線", "地質")
-    )
-"""
-# Using "with" notation
 with st.sidebar:
     add_radio = st.radio(
         "種類",
@@ -34,17 +25,17 @@ if add_radio =="電気工学_基本":
         
     with col2:
         st.write('電流I（アンペア）を求める')
-        orm_2 = st.number_input("抵抗R_")
-        volt_2 = st.number_input("電圧V_")
-        ampea_2 = volt_2 * orm_2 
-        st.write(f"　電流Iは{ampea_2:,.3f}Vです")
+        orm_1 = st.number_input("抵抗R_")
+        volt_1 = st.number_input("電圧V_")
+        ampea_1 = volt_1 * orm_1 
+        st.write(f"　電流Iは{ampea_1:,.3f}Vです")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
-        volt_3 = st.number_input("電圧V__")
-        ampea_3 = st.number_input("電流I__")
-        orm_3 = volt_3 * ampea_3 
-        st.write(f"　抵抗Rは{orm_3:,.3f}Vです")
+        volt_1 = st.number_input("電圧V__")
+        ampea_1 = st.number_input("電流I__")
+        orm_1 = volt_1 * ampea_1 
+        st.write(f"　抵抗Rは{orm_1:,.3f}Vです")
 
 
 if add_radio =="*電気工学_電磁気*":
