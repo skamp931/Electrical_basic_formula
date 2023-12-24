@@ -29,14 +29,24 @@ if add_radio =="電気工学_基本":
         orm_1 = st.number_input("抵抗R_",10)
         volt_1 = st.number_input("電圧V_",50)
         ampea_1 = volt_1 / orm_1 
-        st.write(f"　電流Iは{ampea_1:,.3f}Vです")
+        st.write(f"　電流Iは{ampea_1:,.3f}Aです")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
         volt_1 = st.number_input("電圧V__",50)
         ampea_1 = st.number_input("電流I__",5)
         orm_1 = volt_1 / ampea_1 
-        st.write(f"　抵抗Rは{orm_1:,.3f}Vです")
+        st.write(f"　抵抗Rは{orm_1:,.3f}Ωです")
+
+    st.write("_抵抗の並列接続_")
+    #st.image("./image/orm.jpg")
+    pala = st.number_input("並列数",2)
+    orm_para_num = []
+    if pala > 1:
+        for i in range(pala):
+            orm_pala[i] = st.number_input(f"{i:d}つ目の抵抗値",10)
+    orm_para_value = sum(1/orm_para)
+    st.write(f"　抵抗Rは{orm_para_value:,.3f}Ωです")
 
 
 if add_radio =="*電気工学_電磁気*":
