@@ -2,7 +2,7 @@ import streamlit as st
 import math
 import time
 
-st.title("**電気工学等の基本公式計算**",divider='rainbow')
+st.title("**電気工学等の基本公式計算**")
 
 with st.sidebar:
     add_radio = st.radio(
@@ -11,7 +11,7 @@ with st.sidebar:
     )
 
 if add_radio =="電気工学_基本":
-    st.subheader('電気工学_基本')
+    st.header('電気工学_基本')
     st.subheader('オームの法則', divider='blue')
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
@@ -52,16 +52,16 @@ if add_radio =="電気工学_基本":
 
 
 if add_radio =="電気工学_電磁気":
+    st.header('電気工学_電磁気')   
     st.write("作成中")
-    st.write("")
 
 if add_radio =="架線":
+    st.header('架線')   
     st.write("作成中")
-    st.write("")
 
 if add_radio =="地質":
+    st.header('地質')   
     st.write("作成中")
-    st.write("")
 
 for i in range(20):
     st.write("")
