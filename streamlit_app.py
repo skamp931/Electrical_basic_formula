@@ -21,6 +21,7 @@ with st.sidebar:
 
 if add_radio =="電気工学_基本":
     st.write("*電気工学_基本*")
+    st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
  
     with col1:
