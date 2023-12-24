@@ -46,8 +46,8 @@ if add_radio =="電気工学_基本":
         for i in range(pala):
             orm_pala.append("")
             orm_pala[i] = st.number_input(f"{i:d}つ目の抵抗値",10)
-    orm_para_value = sum(1/orm_para)
-    st.write(f"　抵抗Rは{orm_para_value:,.3f}Ωです")
+    orm_pala_value = sum(1/orm_plra)
+    st.write(f"　抵抗Rは{orm_pala_value:,.3f}Ωです")
 
 
 if add_radio =="*電気工学_電磁気*":
