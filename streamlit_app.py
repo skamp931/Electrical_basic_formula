@@ -81,7 +81,7 @@ if add_radio =="電気工学_基本":
         st.latex(r''' \sigma = \frac{1}{\rho} ''')
         rho_3 = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8_",10.0) 
         sigma_3 = 1 / (rho_3/10**8)
-        st.metric(label="導電率σ",value=f"{sigma_3:,.f}[S/m]")
+        st.metric(label="導電率σ",value=f"{sigma_3:,}[S/m]")
 
 if add_radio =="電気工学_電磁気":
     st.header('【電気工学_電磁気】')   
