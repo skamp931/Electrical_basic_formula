@@ -64,7 +64,7 @@ if add_radio =="電気工学_基本":
         rho = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8",10.0)
         L = st.number_input("長さL",5.0)
         S = st.number_input("断面積S",10.0)
-        R_rho_1 = (rho / 10^8) * L / S
+        R_rho_1 = (rho / 10**8) * L / S
         st.metric(label="抵抗R",value=f"{e_rho_1:,.3f}Ω")
         
     with col5:
@@ -79,8 +79,8 @@ if add_radio =="電気工学_基本":
     with col6:
         st.write('導電率 σ を求める')
         st.latex(r''' \sigma = \frac{1}{\rho} ''')
-        rho_3 = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8_",10.0) /10^8
-        sigma_3 = 1 / rho_3
+        rho_3 = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8_",10.0) 
+        sigma_3 = 1 / (rho_3/10**8)
         st.metric(label="導電率σ",value=f"{sigma_3:,.f}[S/m]")
 
 if add_radio =="電気工学_電磁気":
