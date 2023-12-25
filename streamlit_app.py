@@ -61,10 +61,10 @@ if add_radio =="電気工学_基本":
     with col4:
         st.write('抵抗 R を求める')
         st.latex(r''' R = \rho \frac{L}{S} ''')
-        rho = st.number_input(r"抵抗率ρ[Ω・ｍ]✕10^-8",10.0) /10^8
+        rho = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8",10.0)
         L = st.number_input("長さL",5.0)
         S = st.number_input("断面積S",10.0)
-        R_rho_1 = rho * L / S
+        R_rho_1 = (rho / 10^8) * L / S
         st.metric(label="抵抗R",value=f"{e_rho_1:,.3f}Ω")
         
     with col5:
