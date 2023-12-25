@@ -81,7 +81,7 @@ if add_radio =="電気工学_基本":
         st.latex(r''' \sigma = \frac{1}{\rho} ''')
         rho_3 = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8_",10.0) 
         sigma_3 = 1 / (rho_3/10**8)
-        st.metric(label="導電率σ",value=f"{sigma_3:,}[S/m]")
+        st.metric(label="導電率σ",value=f"{sigma_3:,.3f}[S/m]")
 
 if add_radio =="電気工学_電磁気":
     st.header('【電気工学_電磁気】')   
@@ -104,7 +104,7 @@ if add_radio =="基礎":
         st.write('面の断面積')
         st.latex(r'''S = πr^{2} ''')
         radius_k_1 = st.number_input("半径r",5.0)
-        S_k_1 = radius_1^2 * math.pi()
+        S_k_1 = radius_1**2 * math.pi()
         st.metric(label="面談面積S",value=f"{S_k_1:,.3f}m2")
         
     with col2_k:
