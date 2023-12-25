@@ -104,7 +104,7 @@ if add_radio =="基礎":
         st.write('面の断面積')
         st.latex(r'''S = πr^{2} ''')
         radius_k_1 = st.number_input("半径r",5.0)
-        S_k_1 = radius_1**2 * math.pi()
+        S_k_1 = radius_k_1**2 * math.pi()
         st.metric(label="面談面積S",value=f"{S_k_1:,.3f}m2")
         
     with col2_k:
