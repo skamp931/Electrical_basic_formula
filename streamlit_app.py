@@ -65,7 +65,7 @@ if add_radio =="電気工学_基本":
         L = st.number_input("長さL",5.0)
         S = st.number_input("断面積S",10.0)
         R_rho_1 = (rho / 10**8) * L / S
-        st.metric(label="抵抗R",value=f"{e_rho_1:,.3f}Ω")
+        st.metric(label="抵抗R",value=f"{R_rho_1:,.3f}Ω")
         
     with col5:
         st.write('抵抗率 ρ を求める')
