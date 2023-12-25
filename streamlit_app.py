@@ -70,7 +70,7 @@ if add_radio =="電気工学_基本":
     with col5:
         st.write('抵抗率 ρ を求める')
         st.latex(r''' \rho =  R\frac{S}{L} ''')
-        R_rho_2 = st.number_input("抵抗R",10.0)
+        R_rho_2 = st.number_input("_抵抗R",10.0)
         L_2 = st.number_input("長さL_",5.0)
         S_2 = st.number_input("断面積S_",10.0)
         rho_2 = R_rho_2 * S_2 / L_2
