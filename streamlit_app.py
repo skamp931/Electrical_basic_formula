@@ -27,11 +27,14 @@ if add_radio =="電気工学_基本":
         st.write('電圧V（ボルト）を求める')
         st.latex(r'''IR = V ''')
         orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="1")
-        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=5.0,format="%f",key="2")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="2")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
-        st.metric(label="電圧V",value=f"{volt_1:,.3f}V")
-        
+        if isinstance(volt_1,int):
+            st.metric(label="電圧V",value=f"{volt_1:,}V")
+        else:
+            st.metric(label="電圧V",value=f"{volt_1:,.3f}V")
+
     with col2:
         st.write('電流I（アンペア）を求める')
         st.latex(r'''\frac{V}{R} = I ''')
