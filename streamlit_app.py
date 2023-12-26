@@ -152,7 +152,7 @@ if add_radio =="電気工学_基本":
         Rbun_2 = st.number_input(label="抵抗R2[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="23")
         denryu = st.number_input(label="電流I[A]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f",key="24")
         #volt_1 = st.empty()
-        I_bun = (Rbun_1 / (Rbun_1 + Rbun_2)) * denryu
+        I_bun = (Rbun_2 / (Rbun_1 + Rbun_2)) * denryu
         if V_bun.is_integer():
             st.metric(label="R1に流れる電流I",value=f"{I_bun:,}A")
         else:
