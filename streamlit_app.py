@@ -10,8 +10,11 @@ with st.sidebar:
         ("電気工学_基本", "電気工学_電磁気", "架線", "地質","基礎")
     )
 
+#電気工学基本====================================================================
 if add_radio =="電気工学_基本":
     st.header('【電気工学_基本】')
+
+    #オームの法則==================================================================
     st.subheader('オームの法則', divider='blue')
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
@@ -58,6 +61,8 @@ if add_radio =="電気工学_基本":
             st.metric(label="抵抗R",value=f"{orm_1:,.3f}Ω")
     
     st.write("")
+    #抵抗並列接続==================================================================
+
     st.subheader('抵抗の並列接続', divider='blue')
     st.latex(r''' \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots = R''')
     #st.image("./image/orm.jpg")
@@ -72,6 +77,7 @@ if add_radio =="電気工学_基本":
     st.metric(label="抵抗R",value=f"{1/orm_pala_value:,.3f}Ω")
 
     st.write("")
+    #抵抗率==================================================================
     st.subheader('抵抗率', divider='blue')
     col4, col5,col6 = st.columns(3)
  
@@ -109,6 +115,35 @@ if add_radio =="電気工学_基本":
         else:
             st.metric(label="導電率σ",value=f"{sigma_3:,.3f}[S/m]")
 
+    #電流の定義==================================================================
+    st.write("")
+    st.subheader('電荷から電流を求める', divider='blue')
+    st.latex(r'''I = \frac{Q}{t}''')
+    q_1 = st.number_input(label="電荷Q[C]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="17")
+    time_1 = st.number_input(label="時間t[秒]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="18")
+    #volt_1 = st.empty()
+    ampea_10 = q_1 / time_1
+    if ampea_10.is_integer():
+        st.metric(label="電流I",value=f"{ampea_10:,}A")
+    else:
+        st.metric(label="電流I",value=f"{ampea_10:,.3f}A")
+
+    #電流の定義==================================================================
+    st.write("")
+    st.subheader('分圧の公式', divider='blue')
+    st.latex(r'''V_1 = \frac{R_1}{R_1 + R_2} E''')
+    Rbun_1 = st.number_input(label="抵抗R1[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="19")
+    Rbun_2 = st.number_input(label="抵抗R2[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="20")
+    denatu = st.number_input(label="電圧E[V]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="21")
+    #volt_1 = st.empty()
+    V_bun = (Rbun_1 / (Rbun_1 + Rbun_2)) * denatu
+    if V_bun.is_integer():
+        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,}V")
+    else:
+        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,.3f}A")
+
+
+#電気工学基本====================================================================
 if add_radio =="電気工学_電磁気":
     st.header('【電気工学_電磁気】')   
     st.write("作成中")
