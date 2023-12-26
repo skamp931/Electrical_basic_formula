@@ -2,6 +2,7 @@ import streamlit as st
 import math
 import time
 
+st.set_page_config(page_title="電気工学等の基本公式計算")
 st.title("**電気工学等の基本公式計算**")
 
 with st.sidebar:
