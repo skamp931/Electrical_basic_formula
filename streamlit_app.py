@@ -140,7 +140,7 @@ if add_radio =="電気工学_基本":
     if V_bun.is_integer():
         st.metric(label="R1にかかる電圧V",value=f"{V_bun:,}V")
     else:
-        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,.3f}A")
+        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,.3f}V")
 
 
 #電気工学基本====================================================================
@@ -168,9 +168,9 @@ if add_radio =="基礎":
         s_k_1 = radius_k_1**2 * math.pi
 
         if s_k_1.is_integer():
-            st.metric(label="面断面積S[m2]",value=f"{S_k_1:,}m2")
+            st.metric(label="面断面積S[m2]",value=f"{s_k_1:,}m2")
         else:
-            st.metric(label="面断面積S[m2]",value=f"{S_k_1:,.3f}m2")
+            st.metric(label="面断面積S[m2]",value=f"{s_k_1:,.3f}m2")
     
     with col2_k:
         st.write(' ')
