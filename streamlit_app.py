@@ -26,7 +26,7 @@ if add_radio =="電気工学_基本":
     with col1:
         st.write('電圧V（ボルト）を求める')
         st.latex(r'''IR = V ''')
-        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="1")
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="1")
         ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=5.0,format="%f",key="2")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
