@@ -26,8 +26,8 @@ if add_radio =="電気工学_基本":
     with col1:
         st.write('電圧V（ボルト）を求める')
         st.latex(r'''IR = V ''')
-        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,value=1,format="%f",key="1")
-        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,value=1,format="%f",key="2")
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="1")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=5.0,format="%f",key="2")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
         st.metric(label="電圧V",value=f"{volt_1:,.3f}V")
@@ -35,16 +35,16 @@ if add_radio =="電気工学_基本":
     with col2:
         st.write('電流I（アンペア）を求める')
         st.latex(r'''\frac{V}{R} = I ''')
-        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,value=1,format="%f",key="3")
-        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,value=1,format="%f",key="4")
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="3")
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=10.0,format="%f",key="4")
         ampea_1 = volt_1 / orm_1 
         st.metric(label="電流I",value=f"{ampea_1:,.3f}A")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
         st.latex(r'''\frac{V}{I} = R''')
-        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,value=1,format="%f",key="5")
-        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,value=1,format="%f",key="6")
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="5")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="6")
         orm_1 = volt_1 / ampea_1 
         st.metric(label="抵抗R",value=f"{orm_1:,.3f}Ω")
 
