@@ -38,19 +38,25 @@ if add_radio =="電気工学_基本":
     with col2:
         st.write('電流I（アンペア）を求める')
         st.latex(r'''\frac{V}{R} = I ''')
-        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="3")
-        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=10.0,format="%f",key="4")
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="3")
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f",key="4")
         ampea_1 = volt_1 / orm_1 
-        st.metric(label="電流I",value=f"{ampea_1:,.3f}A")
-
+        if ampea_1.is_integer():
+            st.metric(label="電流I",value=f"{ampea_1:,}A")
+        else:
+            st.metric(label="電流I",value=f"{ampea_1:,.3f}A")
+            
     with col3:
         st.write('抵抗R（オーム）を求める')
         st.latex(r'''\frac{V}{I} = R''')
-        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="5")
-        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=0.000000001,max_value=1000000000.0,value=1.0,format="%f",key="6")
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f",key="5")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="6")
         orm_1 = volt_1 / ampea_1 
-        st.metric(label="抵抗R",value=f"{orm_1:,.3f}Ω")
-
+        if orm_1.is_integer():
+            st.metric(label="抵抗R",value=f"{orm_1:,}Ω")
+        else:
+            st.metric(label="抵抗R",value=f"{orm_1:,.3f}Ω")
+    
     st.write("")
     st.subheader('抵抗の並列接続', divider='blue')
     st.latex(r''' \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots = R''')
@@ -60,8 +66,9 @@ if add_radio =="電気工学_基本":
     if pala > 1:
         for i in range(pala):
             orm_pala.append("")
-            orm_pala[i] = st.number_input(f"{i+1:d}つ目の抵抗値",10.000)
+            orm_pala[i] = st.number_input(label=f"{i+1:d}つ目の抵抗値",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f")
     orm_pala_value = sum([1/i for i in orm_pala])
+    
     st.metric(label="抵抗R",value=f"{1/orm_pala_value:,.3f}Ω")
 
     st.write("")
@@ -71,27 +78,36 @@ if add_radio =="電気工学_基本":
     with col4:
         st.write('抵抗 R を求める')
         st.latex(r''' R = \rho \frac{L}{S} ''')
-        rho = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8",10.0)
-        L = st.number_input("長さL",5.0)
-        S = st.number_input("断面積S",10.0)
-        R_rho_1 = (rho / 10**8) * L / S
-        st.metric(label="抵抗R",value=f"{R_rho_1:,.3f}Ω")
-        
+        rho = st.number_input(label="抵抗率ρ[Ω・ｍ]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=0.00000010,format="%f"),key="10")
+        L = st.number_input(label="長さL[m]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f"),key="11")
+        S = st.number_input(label="断面積S[m2]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f"),key="12")
+        R_rho_1 = (rho) * L / S
+        if R_rho_1.is_integer():
+            st.metric(label="抵抗R",value=f"{R_rho_1:,}Ω")
+        else:
+            st.metric(label="抵抗R",value=f"{R_rho_1:,.3f}Ω")
+    
     with col5:
         st.write('抵抗率 ρ を求める')
         st.latex(r''' \rho =  R\frac{S}{L} ''')
-        R_rho_2 = st.number_input("_抵抗R",10.0)
-        L_2 = st.number_input("長さL_",5.0)
-        S_2 = st.number_input("断面積S_",10.0)
+        R_rho_2 = st.number_input(label="_抵抗R[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f"),key="13")
+        L_2 = st.number_input(label="長さL[m]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f"),key="14")
+        S_2 = st.number_input(label="断面積S[m2]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f"),key="15")
         rho_2 = R_rho_2 * S_2 / L_2
-        st.metric(label="抵抗率ρ",value=f"{rho_2:,.3f}[Ω・ｍ]")
+        if rho_2.is_integer():
+            st.metric(label="抵抗率ρ",value=f"{rho_2:,}[Ω・ｍ]")
+        else:
+            st.metric(label="抵抗率ρ",value=f"{rho_2:,.9f}[Ω・ｍ]")
 
     with col6:
         st.write('導電率 σ を求める')
         st.latex(r''' \sigma = \frac{1}{\rho} ''')
-        rho_3 = st.number_input("抵抗率ρ[Ω・ｍ]✕10^-8_",10.0) 
-        sigma_3 = 1 / (rho_3/10**8)
-        st.metric(label="導電率σ",value=f"{sigma_3:,.3f}[S/m]")
+        rho_3 = st.number_input(label="抵抗率ρ[Ω・ｍ]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=0.000001,format="%f"),key="16") 
+        sigma_3 = 1 / (rho_3)
+        if sigma_3.is_integer():
+            st.metric(label="導電率σ",value=f"{sigma_3:,}[S/m]")
+        else:
+            st.metric(label="導電率σ",value=f"{sigma_3:,.3f}[S/m]")
 
 if add_radio =="電気工学_電磁気":
     st.header('【電気工学_電磁気】')   
