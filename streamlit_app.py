@@ -15,12 +15,19 @@ if add_radio =="電気工学_基本":
     st.subheader('オームの法則', divider='blue')
     st.image("./image/orm.jpg")
     col1, col2,col3 = st.columns(3)
- 
+
+    label="test",
+    min_value=0.000000,
+    step=0.000001,
+    max_value=0.0005,
+    value=0.0000045,
+    format="%f",
+    
     with col1:
         st.write('電圧V（ボルト）を求める')
         st.latex(r'''IR = V ''')
-        orm_1 = st.number_input("抵抗R",10.0)
-        ampea_1 = st.number_input("電流I",5.0)
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,value=1,format="%f",key="1")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,value=1,format="%f",key="2")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
         st.metric(label="電圧V",value=f"{volt_1:,.3f}V")
@@ -28,16 +35,16 @@ if add_radio =="電気工学_基本":
     with col2:
         st.write('電流I（アンペア）を求める')
         st.latex(r'''\frac{V}{R} = I ''')
-        orm_1 = st.number_input("抵抗R_",10.0)
-        volt_1 = st.number_input("電圧V_",50.0)
+        orm_1 = st.number_input(label="抵抗R",min_value=0.000000000,value=1,format="%f",key="3")
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,value=1,format="%f",key="4")
         ampea_1 = volt_1 / orm_1 
         st.metric(label="電流I",value=f"{ampea_1:,.3f}A")
 
     with col3:
         st.write('抵抗R（オーム）を求める')
         st.latex(r'''\frac{V}{I} = R''')
-        volt_1 = st.number_input("電圧V__",50.0)
-        ampea_1 = st.number_input("電流I__",5.0)
+        volt_1 = st.number_input(label="電圧V",min_value=0.000000000,value=1,format="%f",key="5")
+        ampea_1 = st.number_input(label="電流I",min_value=0.000000000,value=1,format="%f",key="6")
         orm_1 = volt_1 / ampea_1 
         st.metric(label="抵抗R",value=f"{orm_1:,.3f}Ω")
 
