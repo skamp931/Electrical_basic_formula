@@ -130,7 +130,7 @@ if add_radio =="基礎":
         st.write('面の断面積')
         st.latex(r'''S = πr^{2} ''')
         radius_k_1 = st.number_input(label="半径r",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=0.5,format="%f",key="17")
-        S_k_1 = radius_k_1**2 * math.pi()
+        S_k_1 = radius_k_1**2 * math.pi
 
         if s_k_1.is_integer():
             st.metric(label="面断面積S[m2]",value=f"{S_k_1:,}m2")
