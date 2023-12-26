@@ -79,7 +79,7 @@ if add_radio =="電気工学_基本":
     st.write("")
     #抵抗率==================================================================
     st.subheader('抵抗率', divider='blue')
-    col4, col5,col6 = st.columns(3)
+    col4,col5,col6 = st.columns(3)
  
     with col4:
         st.write('抵抗 R を求める')
@@ -128,19 +128,36 @@ if add_radio =="電気工学_基本":
     else:
         st.metric(label="電流I",value=f"{ampea_10:,.3f}A")
 
-    #分圧==================================================================
+    #分圧・分流==================================================================
     st.write("")
-    st.subheader('分圧の公式', divider='blue')
-    st.latex(r'''V_1 = \frac{R_1}{R_1 + R_2} E''')
-    Rbun_1 = st.number_input(label="抵抗R1[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=1.0,format="%f",key="19")
-    Rbun_2 = st.number_input(label="抵抗R2[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="20")
-    denatu = st.number_input(label="電圧E[V]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="21")
-    #volt_1 = st.empty()
-    V_bun = (Rbun_1 / (Rbun_1 + Rbun_2)) * denatu
-    if V_bun.is_integer():
-        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,}V")
-    else:
-        st.metric(label="R1にかかる電圧V",value=f"{V_bun:,.3f}V")
+    st.subheader('分圧・分流の公式', divider='blue')
+    
+    col7,col8 = st.columns(2)
+    with col7:    
+        st.latex(r'''V_1 = \frac{R_1}{R_1 + R_2} E''')
+        Rbun_1 = st.number_input(label="抵抗R1[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="19")
+        Rbun_2 = st.number_input(label="抵抗R2[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="20")
+        denatu = st.number_input(label="電圧E[V]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f",key="21")
+        #volt_1 = st.empty()
+        V_bun = (Rbun_1 / (Rbun_1 + Rbun_2)) * denatu
+        if V_bun.is_integer():
+            st.metric(label="R1にかかる電圧V",value=f"{V_bun:,}V")
+        else:
+            st.metric(label="R1にかかる電圧V",value=f"{V_bun:,.3f}V")
+
+    #分流==================================================================
+    with col8:    
+        st.latex(r'''I_1 = \frac{R_2}{R_1 + R_2} I''')
+        Rbun_1 = st.number_input(label="抵抗R1[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="22")
+        Rbun_2 = st.number_input(label="抵抗R2[Ω]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="23")
+        denryu = st.number_input(label="電流I[A]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=10.0,format="%f",key="24")
+        #volt_1 = st.empty()
+        I_bun = (Rbun_1 / (Rbun_1 + Rbun_2)) * denryu
+        if V_bun.is_integer():
+            st.metric(label="R1に流れる電流I",value=f"{I_bun:,}A")
+        else:
+            st.metric(label="R1に流れる電流I",value=f"{I_bun:,.3f}A")
+
 
 
 #電気工学基本====================================================================
