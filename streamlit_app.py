@@ -108,7 +108,7 @@ if add_radio =="電気工学_基本":
     with col6:
         st.write('導電率 σ を求める')
         st.latex(r''' \sigma = \frac{1}{\rho} ''')
-        rho_3 = st.number_input(label="抵抗率ρ[Ω・ｍ]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=0.000001,format="%f",key="16") 
+        rho_3 = st.number_input(label="抵抗率ρ[Ω・ｍ]",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=0.001,format="%f",key="16") 
         sigma_3 = 1 / (rho_3)
         if sigma_3.is_integer():
             st.metric(label="導電率σ",value=f"{sigma_3:,}[S/m]")
