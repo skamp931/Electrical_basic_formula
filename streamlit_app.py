@@ -30,7 +30,7 @@ if add_radio =="電気工学_基本":
         ampea_1 = st.number_input(label="電流I",min_value=0.000000000,step=1.0,max_value=1000000000.0,value=5.0,format="%f",key="2")
         #volt_1 = st.empty()
         volt_1 = orm_1 * ampea_1
-        if isinstance(volt_1,int):
+        if volt_1.is_integer():
             st.metric(label="電圧V",value=f"{volt_1:,}V")
         else:
             st.metric(label="電圧V",value=f"{volt_1:,.3f}V")
